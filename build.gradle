@@ -49,7 +49,7 @@ allprojects {
 
     apply plugin: 'java'
     apply plugin: 'jacoco'
-    apply plugin: 'checkstyle'
+//    apply plugin: 'checkstyle'
 
     repositories {
         mavenCentral()
@@ -81,10 +81,10 @@ allprojects {
         reports.html.destination = file("${reporting.baseDir}/${name}")
     }
 
-    checkstyle {
-        toolVersion = "7.7"
-        configFile = file("${rootProject.projectDir}/config/checkstyle/checkstyle.xml")
-    }
+//    checkstyle {
+//        toolVersion = "7.7"
+//        configFile = file("${rootProject.projectDir}/config/checkstyle/checkstyle.xml")
+//    }
 }
 
 subprojects {
@@ -134,13 +134,13 @@ configure(subprojects.findAll {it.name != 'integration-tests'}) {
             mavenJava(MavenPublication) {
                 from components.java
 
-                artifact sourcesJar {
-                    classifier 'sources'
-                }
-
-                artifact testJar {
-                    classifier 'tests'
-                }
+//                artifact sourcesJar {
+//                    classifier 'sources'
+//                }
+//
+//                artifact testJar {
+//                    classifier 'tests'
+//                }
             }
         }
     }
